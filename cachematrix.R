@@ -1,20 +1,19 @@
 ## Put comments here that give an overall description of what your
 ## functions do
 
-## Write a short comment describing this function
+## Create object, which contains matrix itself and methods for
+## getting and setting matrix and inverse matrix
 
 makeCacheMatrix <- function(x = matrix()) {
   m <- NULL
-  set <- function(y) {
+  set <- function(y){
     x <<- y
     m <<- NULL
   }
-  get <- function()
-  {
+  get <- function(){
     x
   }
-  setinv <- function(inv)
-  {
+  setinv <- function(inv){
     m <<- inv
   }
   getinv <- function(){
@@ -26,7 +25,9 @@ makeCacheMatrix <- function(x = matrix()) {
 }
 
 
-## Write a short comment describing this function
+## Return inverse matrix for matrix, stored in object 'x',
+## which prepared by function makeCacheMatrix(x)
+
 
 cacheSolve <- function(x, ...) {
         ## Return a matrix that is the inverse of 'x'
@@ -40,6 +41,3 @@ cacheSolve <- function(x, ...) {
   x$setinv(m)
   m
 }
-#x <- matrix(c(2,7,3,34,67,12,8,9,17), nrow = 3, ncol = 3, byrow = TRUE)
-#v<-makeCacheMatrix(x)
-#mmm<-cacheSolve(v)
